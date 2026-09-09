@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme {
+  /* Marine palette — deep indigo-navy surfaces, cool near-white text, a light
+     beacon-blue accent. Surfaces layer indigo > deep indigo > trench, front to
+     back. NOTE: --color-gold and --color-ocean hold a light blue in this
+     theme; the token names are kept for churn reasons — see DESIGN.md. */
+  --color-canvas: #03045e; /* primary surface — body, cards, nav */
+  --color-mist: #02033f; /* deeper section tint — Hero, Experiences, Footer */
+  --color-sand: #01012a; /* deepest section — Reservation (card floats on it) */
+  --color-shell: #26306e; /* steel — image placeholder, disabled fill */
+
+  --color-ink: #f2f7fb; /* cool near-white — headings, primary text, solid buttons */
+  --color-ink-soft: #dbe6f1; /* soft blue-white — secondary text */
+  --color-muted: #aec3d8; /* cool grey-blue — body / supporting text */
+  --color-faint: #89a1ba; /* dim slate — placeholders, fine print */
+  --color-line: #2a2f70; /* steel hairline borders, dividers */
+
+  --color-gold: #79c2e3; /* accent — brand dot, datelines, chevrons, stars, focus */
+  --color-gold-soft: #a5dbef; /* lighter accent — accent hover */
+  --color-ocean: #79c2e3; /* interactive — text links, active controls, focus ring */
+  --color-ocean-deep: #a5dbef; /* link / control hover */
+
+  /* Admin workspace — light management surface with the navy sidebar */
+  --color-adm-bg: #fdfefe; /* soft-white workspace */
+  --color-adm-panel: #ffffff; /* white cards, forms, tables */
+  --color-adm-ink: #1b2a3d; /* cool near-black text */
+  --color-adm-muted: #5a6b7d; /* secondary text */
+  --color-adm-faint: #8a99a8; /* fine print, placeholders */
+  --color-adm-border: #e2e8ef; /* hairlines, dividers */
+  --color-adm-sidebar: #03045e; /* indigo sidebar */
+  --color-adm-sidebar-deep: #02033f; /* sidebar hover / active */
+
+  --font-display: var(--ff-display), "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: var(--ff-sans), "Plus Jakarta Sans", ui-sans-serif, system-ui,
+    sans-serif;
+
+  --spacing-section: clamp(4.5rem, 10vw, 8.5rem);
+  --spacing-section-tight: clamp(3.25rem, 6vw, 5.5rem);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  body {
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Browser surfaces themed from the palette */
+  ::selection {
+    background: color-mix(in oklab, var(--color-gold) 26%, transparent);
+    color: var(--color-ink);
+  }
+
+  :where(a, button, input, select, textarea):focus-visible {
+    outline: 2px solid var(--color-ocean);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-mist);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-shell);
+    border-radius: 999px;
+    border: 3px solid var(--color-mist);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2f3a8a;
+  }
+
+  * {
+    scrollbar-color: var(--color-shell) var(--color-mist);
+  }
+}
+
+@layer components {
+  /* Small-caps tracked marker — used for datelines and time ranges that
+     carry real information, never as a decorative heading kicker. */
+  .label-track {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+  }
+
+  .hairline {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      color-mix(in oklab, var(--color-gold) 60%, transparent) 15%,
+      color-mix(in oklab, var(--color-gold) 60%, transparent) 85%,
+      transparent
+    );
+  }
+
+  /* Navy scrims — the photo settles into the page's harbour tones */
+  .scrim-hero {
+    background:
+      linear-gradient(
+        to bottom,
+        color-mix(in oklab, var(--color-canvas) 32%, transparent) 0%,
+        transparent 20%,
+        transparent 30%,
+        color-mix(in oklab, var(--color-canvas) 55%, transparent) 60%,
+        color-mix(in oklab, var(--color-canvas) 88%, transparent) 84%,
+        var(--color-canvas) 100%
+      ),
+      radial-gradient(
+        140% 80% at 10% 78%,
+        color-mix(in oklab, var(--color-canvas) 82%, transparent),
+        transparent 58%
+      );
+  }
+
+  .scrim-soft {
+    background: linear-gradient(
+      to top,
+      color-mix(in oklab, var(--color-canvas) 30%, transparent),
+      transparent 46%
+    );
+  }
+}
+
+/* Signature entrance: hero image settle + line reveal.
+   Safe without JS — elements are visible if the animation never runs. */
+@keyframes hero-settle {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes line-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.7em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cue-drift {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 0.9;
+  }
+}
