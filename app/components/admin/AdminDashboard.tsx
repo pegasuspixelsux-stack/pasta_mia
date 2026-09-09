@@ -41,8 +41,8 @@ export function AdminDashboard({ onSignOut }: { onSignOut: () => void }) {
         className={[
           "flex w-full items-center justify-between rounded-lg px-4 py-3 text-sm font-medium transition-colors",
           tab === key
-            ? "bg-adm-sidebar-deep text-ink"
-            : "text-muted/80 hover:bg-adm-sidebar-deep/60 hover:text-ink",
+            ? "bg-adm-sidebar-deep text-white"
+            : "text-white/55 hover:bg-adm-sidebar-deep/60 hover:text-white",
           variant === "sidebar" && key === "config" ? "mt-auto" : "",
         ].join(" ")}
       >
@@ -57,20 +57,20 @@ export function AdminDashboard({ onSignOut }: { onSignOut: () => void }) {
 
   const footer = (
     <div className="shrink-0 space-y-3 border-t border-white/10 p-4">
-      <p className="text-xs text-muted/70">
+      <p className="text-xs text-white/60">
         Sesión activa como{" "}
-        <span className="block font-semibold text-gold">Gerente</span>
+        <span className="block font-semibold text-gold-soft">Gerente</span>
       </p>
       <Link
         href="/"
-        className="block text-xs text-muted/70 transition-colors hover:text-ink"
+        className="block text-xs text-white/60 transition-colors hover:text-white"
       >
         Ver sitio →
       </Link>
       <button
         type="button"
         onClick={onSignOut}
-        className="w-full rounded-md border border-white/20 bg-adm-sidebar-deep px-3 py-2 text-center text-xs font-medium text-muted transition-colors hover:border-gold hover:text-gold"
+        className="w-full rounded-md border border-white/20 bg-adm-sidebar-deep px-3 py-2 text-center text-xs font-medium text-white/70 transition-colors hover:border-gold-soft hover:text-gold-soft"
       >
         Cerrar sesión
       </button>
@@ -80,17 +80,17 @@ export function AdminDashboard({ onSignOut }: { onSignOut: () => void }) {
   return (
     <div className="flex h-dvh w-full flex-col overflow-hidden bg-adm-bg text-adm-ink md:flex-row">
       {/* Mobile header with burger */}
-      <div className="z-30 flex h-16 shrink-0 items-center justify-between border-b border-white/10 bg-adm-sidebar px-4 text-ink md:hidden">
+      <div className="z-30 flex h-16 shrink-0 items-center justify-between border-b border-white/10 bg-adm-sidebar px-4 text-white md:hidden">
         <div>
-          <p className="font-display text-base text-gold">Puerto · Panel</p>
-          <p className="text-[0.65rem] text-muted/70">{TITLES[tab]}</p>
+          <p className="font-display text-base text-gold-soft">Pasta Mia · Panel</p>
+          <p className="text-[0.65rem] text-white/60">{TITLES[tab]}</p>
         </div>
         <button
           type="button"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={mobileOpen}
-          className="p-2 text-ink transition-colors hover:text-gold"
+          className="p-2 text-white transition-colors hover:text-gold-soft"
         >
           <svg
             className="h-6 w-6"
@@ -111,7 +111,7 @@ export function AdminDashboard({ onSignOut }: { onSignOut: () => void }) {
 
       {/* Mobile slide-over menu */}
       {mobileOpen ? (
-        <div className="fixed inset-0 top-16 z-40 flex flex-col overflow-y-auto bg-adm-sidebar text-ink md:hidden">
+        <div className="fixed inset-0 top-16 z-40 flex flex-col overflow-y-auto bg-adm-sidebar text-white md:hidden">
           <nav className="flex flex-1 flex-col gap-1 p-4">
             {navButtons("sheet")}
           </nav>
@@ -119,13 +119,13 @@ export function AdminDashboard({ onSignOut }: { onSignOut: () => void }) {
         </div>
       ) : null}
 
-      {/* Desktop navy sidebar */}
-      <aside className="hidden h-full w-64 shrink-0 flex-col bg-adm-sidebar text-ink md:flex">
+      {/* Desktop sidebar */}
+      <aside className="hidden h-full w-64 shrink-0 flex-col bg-adm-sidebar text-white md:flex">
         <div className="shrink-0 border-b border-white/10 p-6">
-          <p className="font-display text-xl tracking-[-0.01em] text-gold">
-            Puerto · Panel
+          <p className="font-display text-xl tracking-[-0.01em] text-gold-soft">
+            Pasta Mia · Panel
           </p>
-          <p className="mt-1 text-xs text-muted/70">Gestión — maqueta</p>
+          <p className="mt-1 text-xs text-white/60">Gestión — maqueta</p>
         </div>
         <nav className="flex flex-1 flex-col gap-1 overflow-y-auto p-4">
           {navButtons("sidebar")}

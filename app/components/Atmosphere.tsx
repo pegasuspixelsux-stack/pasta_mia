@@ -16,7 +16,7 @@ export function Atmosphere() {
         >
           <Image
             src={img.atmosphere}
-            alt="Amigos compartiendo mariscos en una mesa al aire libre sobre el puerto."
+            alt="Mesas de madera y mantel a cuadros en el salón de la trattoria, con la cocina a la vista."
             fill
             sizes="(min-width: 1024px) 52vw, 100vw"
             className="object-cover"

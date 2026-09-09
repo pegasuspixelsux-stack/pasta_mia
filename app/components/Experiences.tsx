@@ -17,7 +17,7 @@ export function Experiences() {
       <div className="mx-auto max-w-[84rem] px-5 sm:px-8">
         <Reveal className="pt-[var(--spacing-section)]">
           <h2 className="font-display text-[clamp(1.9rem,4.4vw,3.1rem)] font-medium leading-[1.08] tracking-[-0.02em] text-ink">
-            Tres servicios, una cocina de mar
+            Tres servicios, una cocina de familia
           </h2>
         </Reveal>
 

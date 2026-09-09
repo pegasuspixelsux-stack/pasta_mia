@@ -6,12 +6,12 @@ import Link from "next/link";
 import { DEMO_CREDENTIALS } from "../../lib/admin-demo";
 
 const BG =
-  "https://images.unsplash.com/photo-1701906876373-54a5452b149f?w=1600&q=80&auto=format&fit=crop";
+  "https://images.unsplash.com/photo-1473093226795-af9932fe5856?w=1600&q=80&auto=format&fit=crop";
 
 const field =
-  "mt-2 w-full rounded-[10px] border border-white/15 bg-white/[0.06] px-3.5 py-2.5 text-[0.95rem] text-ink outline-none transition-colors placeholder:text-white/35 focus:border-gold-soft";
+  "mt-2 w-full rounded-[10px] border border-white/15 bg-white/[0.06] px-3.5 py-2.5 text-[0.95rem] text-white outline-none transition-colors placeholder:text-white/35 focus:border-gold-soft";
 const label =
-  "block text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-muted/80";
+  "block text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-white/60";
 
 export function AdminLogin({ onSignIn }: { onSignIn: () => void }) {
   const [email, setEmail] = useState("");
@@ -31,24 +31,24 @@ export function AdminLogin({ onSignIn }: { onSignIn: () => void }) {
   return (
     <main className="relative min-h-dvh w-full overflow-hidden bg-canvas">
       <Image src={BG} alt="" fill priority sizes="100vw" className="object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#01012a]/55 via-[#01012a]/55 to-[#01012a]/85" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#2c221e]/55 via-[#2c221e]/55 to-[#2c221e]/85" />
 
-      <div className="relative z-10 ml-auto flex min-h-dvh w-full flex-col justify-center bg-[#02033f]/70 px-6 py-16 backdrop-blur-md sm:px-10 md:w-[48%] md:max-w-[36rem] md:bg-[#02033f]/80 md:px-14">
+      <div className="relative z-10 ml-auto flex min-h-dvh w-full flex-col justify-center bg-[#1e1613]/70 px-6 py-16 backdrop-blur-md sm:px-10 md:w-[48%] md:max-w-[36rem] md:bg-[#1e1613]/80 md:px-14">
         <Link
           href="/"
-          className="text-[0.82rem] text-muted/70 transition-colors hover:text-ink"
+          className="text-[0.82rem] text-white/60 transition-colors hover:text-white"
         >
           ← Volver al sitio
         </Link>
 
         <div className="mt-10">
-          <p className="font-display text-2xl tracking-[-0.01em] text-ink">
-            Puerto<span className="text-gold">.</span>
+          <p className="font-display text-2xl tracking-[-0.01em] text-white">
+            Pasta Mia<span className="text-gold-soft">.</span>
           </p>
-          <h1 className="mt-5 font-display text-[2rem] font-medium leading-tight tracking-[-0.02em] text-ink">
+          <h1 className="mt-5 font-display text-[2rem] font-medium leading-tight tracking-[-0.02em] text-white">
             Panel de gestión
           </h1>
-          <p className="mt-2 text-[0.92rem] leading-relaxed text-muted/85">
+          <p className="mt-2 text-[0.92rem] leading-relaxed text-white/75">
             Carta y reservas. Maqueta para la propuesta — sin backend, los
             cambios no se guardan.
           </p>
@@ -68,7 +68,7 @@ export function AdminLogin({ onSignIn }: { onSignIn: () => void }) {
               setError(false);
             }}
             className={field}
-            placeholder="admin@puertopuntadeleste.com"
+            placeholder="admin@pastamia.uy"
             required
           />
 
@@ -93,14 +93,14 @@ export function AdminLogin({ onSignIn }: { onSignIn: () => void }) {
             <button
               type="button"
               onClick={() => setHint((v) => !v)}
-              className="text-[0.8rem] text-muted/70 underline decoration-white/20 underline-offset-4 transition-colors hover:text-ink"
+              className="text-[0.8rem] text-white/60 underline decoration-white/20 underline-offset-4 transition-colors hover:text-white"
             >
               ¿Olvidaste tu contraseña?
             </button>
           </div>
 
           {hint ? (
-            <p className="mt-2 rounded-[10px] border border-white/10 bg-white/[0.04] px-3.5 py-3 text-[0.8rem] leading-relaxed text-muted/85">
+            <p className="mt-2 rounded-[10px] border border-white/10 bg-white/[0.04] px-3.5 py-3 text-[0.8rem] leading-relaxed text-white/75">
               En la versión final, la recuperación es por correo. En esta maqueta
               usá el acceso de muestra de abajo.
             </p>
@@ -115,16 +115,16 @@ export function AdminLogin({ onSignIn }: { onSignIn: () => void }) {
 
           <button
             type="submit"
-            className="mt-2 w-full rounded-full bg-ink px-5 py-3 text-[0.85rem] font-semibold tracking-wide text-[#03045e] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5"
+            className="mt-2 w-full rounded-full bg-[#fdfbf7] px-5 py-3 text-[0.85rem] font-semibold tracking-wide text-ink transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:bg-white"
           >
             Entrar
           </button>
         </form>
 
-        <p className="mt-6 rounded-[10px] border border-dashed border-white/15 px-3.5 py-3 text-[0.8rem] leading-relaxed text-muted/60">
+        <p className="mt-6 rounded-[10px] border border-dashed border-white/15 px-3.5 py-3 text-[0.8rem] leading-relaxed text-white/55">
           Acceso de muestra —{" "}
-          <span className="text-muted">{DEMO_CREDENTIALS.email}</span> /{" "}
-          <span className="text-muted">{DEMO_CREDENTIALS.password}</span>
+          <span className="text-white/80">{DEMO_CREDENTIALS.email}</span> /{" "}
+          <span className="text-white/80">{DEMO_CREDENTIALS.password}</span>
         </p>
       </div>
     </main>

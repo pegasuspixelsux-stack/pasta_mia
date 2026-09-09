@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { hero, img } from "../lib/content";
 import { HeroReviews } from "./HeroReviews";
-import { ChevronDown, Compass } from "./icons";
+import { ChevronDown, Sprig } from "./icons";
 
 export function Hero() {
   return (
@@ -55,10 +55,10 @@ export function Hero() {
               style={{ animationDelay: "0.76s" }}
             >
               <a
-                href="#experiences"
+                href="/menu"
                 className="group inline-flex items-center gap-3 border-b border-ink/25 pb-1.5 text-[0.95rem] font-medium tracking-wide text-ink transition-colors duration-300 hover:border-gold"
               >
-                <Compass className="h-[1.15rem] w-[1.15rem] text-gold transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:rotate-45" />
+                <Sprig className="h-[1.15rem] w-[1.15rem] text-gold transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-rotate-6" />
                 {hero.cta}
               </a>
             </div>

@@ -20,14 +20,14 @@ type Loc = {
 
 export function ConfigPanel() {
   const [local, setLocal] = useState({
-    name: "Puerto",
-    phone: "+598 4244 8899",
-    email: "reservas@puertopuntadeleste.com",
+    name: "Pasta Mia",
+    phone: "+598 2709 4412",
+    email: "hola@pastamia.uy",
   });
   const [reservas, setReservas] = useState({
     aforo: "40",
     sena: "0",
-    turnos: "12:30, 13:30, 15:00, 20:00, 20:30, 21:15, 22:00",
+    turnos: "12:00, 13:00, 14:30, 20:00, 20:30, 21:15, 22:00",
   });
   const [avisos, setAvisos] = useState({
     whatsapp: true,
@@ -110,7 +110,7 @@ export function ConfigPanel() {
                     className={field}
                     value={loc.address}
                     onChange={(e) => setLoc(i, "address", e.target.value)}
-                    placeholder="Ej. Av. Gorlero 1234"
+                    placeholder="Ej. Juan Benito Blanco 1234"
                   />
                 </Row>
                 <Row label="Horario">
@@ -135,7 +135,7 @@ export function ConfigPanel() {
                     className={field}
                     value={loc.email}
                     onChange={(e) => setLoc(i, "email", e.target.value)}
-                    placeholder="Ej. reservas@puertopuntadeleste.com"
+                    placeholder="Ej. hola@pastamia.uy"
                   />
                 </Row>
                 <div className="sm:col-span-2">

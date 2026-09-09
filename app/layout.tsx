@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -9,21 +9,21 @@ const playfair = Playfair_Display({
   style: ["normal", "italic"],
 });
 
-const jakarta = Plus_Jakarta_Sans({
+const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--ff-sans",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://puertopuntadeleste.com"),
-  title: "Puerto | Cocina de Mar y Vistas al Muelle",
+  metadataBase: new URL("https://pastamia.uy"),
+  title: "Pasta Mia | Trattoria de Pasta Fresca y Vino",
   description:
-    "Gastronomía costera, pescados frescos y frutos de mar en el Puerto de Punta del Este. Terraza náutica frente a los yates, cocina hasta tarde.",
+    "Pasta fresca hecha a mano, recetas de familia y vinos italianos en una trattoria de barrio en Pocitos, Montevideo. Amasamos todos los días, cocina hasta tarde.",
   openGraph: {
-    title: "Puerto — Punta del Este",
+    title: "Pasta Mia — Montevideo",
     description:
-      "Cocina de mar y vistas al muelle. Reservá tu mesa frente al puerto.",
+      "Pasta fresca hecha a mano, salsas a fuego lento y vino. Reservá tu mesa.",
     type: "website",
     locale: "es_UY",
   },
@@ -34,7 +34,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="es"
       data-scroll-behavior="smooth"
-      className={`${playfair.variable} ${jakarta.variable} antialiased`}
+      className={`${playfair.variable} ${montserrat.variable} antialiased`}
     >
       <body className="min-h-dvh bg-canvas font-sans text-ink">{children}</body>
     </html>

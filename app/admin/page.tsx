@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AdminApp } from "../components/admin/AdminApp";
 
 export const metadata: Metadata = {
-  title: "Panel — Puerto",
+  title: "Panel — Pasta Mia",
   robots: { index: false, follow: false },
 };
 

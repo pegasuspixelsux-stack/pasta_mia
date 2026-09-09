@@ -1,38 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  /* Marine palette — deep indigo-navy surfaces, cool near-white text, a light
-     beacon-blue accent. Surfaces layer indigo > deep indigo > trench, front to
-     back. NOTE: --color-gold and --color-ocean hold a light blue in this
-     theme; the token names are kept for churn reasons — see DESIGN.md. */
-  --color-canvas: #03045e; /* primary surface — body, cards, nav */
-  --color-mist: #02033f; /* deeper section tint — Hero, Experiences, Footer */
-  --color-sand: #01012a; /* deepest section — Reservation (card floats on it) */
-  --color-shell: #26306e; /* steel — image placeholder, disabled fill */
+  /* Trattoria palette — warm cream surfaces, espresso ink, a Tuscan terracotta
+     accent. Surfaces layer cream > warm cream > wheat, front to back. NOTE:
+     --color-gold and --color-ocean hold the terracotta accent; the token names
+     are kept from earlier palettes for churn reasons — see DESIGN.md. */
+  --color-canvas: #fdfbf7; /* primary surface — body, nav, base sections */
+  --color-mist: #f7f0e4; /* deeper warm tint — Hero, Experiences, Reviews, Footer */
+  --color-sand: #f1e7d6; /* deepest section — Reservation (card floats on it) */
+  --color-shell: #e8dac2; /* wheat — image placeholder, disabled fill */
 
-  --color-ink: #f2f7fb; /* cool near-white — headings, primary text, solid buttons */
-  --color-ink-soft: #dbe6f1; /* soft blue-white — secondary text */
-  --color-muted: #aec3d8; /* cool grey-blue — body / supporting text */
-  --color-faint: #89a1ba; /* dim slate — placeholders, fine print */
-  --color-line: #2a2f70; /* steel hairline borders, dividers */
+  --color-ink: #2c221e; /* espresso — headings, primary text, solid buttons */
+  --color-ink-soft: #4a3a32; /* soft espresso — secondary text */
+  --color-muted: #6f5d51; /* warm brown-grey — body / supporting text */
+  --color-faint: #9c8a7b; /* dim taupe — placeholders, fine print */
+  --color-line: #e6dac6; /* warm hairline borders, dividers */
 
-  --color-gold: #79c2e3; /* accent — brand dot, datelines, chevrons, stars, focus */
-  --color-gold-soft: #a5dbef; /* lighter accent — accent hover */
-  --color-ocean: #79c2e3; /* interactive — text links, active controls, focus ring */
-  --color-ocean-deep: #a5dbef; /* link / control hover */
+  --color-gold: #bc4749; /* accent — brand dot, datelines, chevrons, stars, focus */
+  --color-gold-soft: #d08c6a; /* lighter accent — warm clay, accent hover */
+  --color-ocean: #bc4749; /* interactive — text links, active controls, focus ring */
+  --color-ocean-deep: #9e3a3c; /* link / control hover */
 
-  /* Admin workspace — light management surface with the navy sidebar */
-  --color-adm-bg: #fdfefe; /* soft-white workspace */
+  /* Admin workspace — light management surface with an espresso sidebar */
+  --color-adm-bg: #fdfcfa; /* soft-cream workspace */
   --color-adm-panel: #ffffff; /* white cards, forms, tables */
-  --color-adm-ink: #1b2a3d; /* cool near-black text */
-  --color-adm-muted: #5a6b7d; /* secondary text */
-  --color-adm-faint: #8a99a8; /* fine print, placeholders */
-  --color-adm-border: #e2e8ef; /* hairlines, dividers */
-  --color-adm-sidebar: #03045e; /* indigo sidebar */
-  --color-adm-sidebar-deep: #02033f; /* sidebar hover / active */
+  --color-adm-ink: #2c221e; /* espresso text */
+  --color-adm-muted: #6f5d51; /* secondary text */
+  --color-adm-faint: #9c8a7b; /* fine print, placeholders */
+  --color-adm-border: #ece3d5; /* hairlines, dividers */
+  --color-adm-sidebar: #2c221e; /* espresso sidebar */
+  --color-adm-sidebar-deep: #1e1613; /* sidebar hover / active */
 
   --font-display: var(--ff-display), "Playfair Display", ui-serif, Georgia, serif;
-  --font-sans: var(--ff-sans), "Plus Jakarta Sans", ui-sans-serif, system-ui,
+  --font-sans: var(--ff-sans), "Montserrat", ui-sans-serif, system-ui,
     sans-serif;
 
   --spacing-section: clamp(4.5rem, 10vw, 8.5rem);
@@ -88,7 +88,7 @@
     border: 3px solid var(--color-mist);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #2f3a8a;
+    background: #d8c4a6;
   }
 
   * {
@@ -119,7 +119,7 @@
     );
   }
 
-  /* Navy scrims — the photo settles into the page's harbour tones */
+  /* Cream scrims — the photo settles into the page's warm surface tones */
   .scrim-hero {
     background:
       linear-gradient(
@@ -147,7 +147,7 @@
   }
 }
 
-/* Signature entrance: hero image settle + line reveal.
+/* Hero entrance: hero image settle + line reveal.
    Safe without JS — elements are visible if the animation never runs. */
 @keyframes hero-settle {
   from {

@@ -7,11 +7,11 @@
  */
 
 export const DEMO_CREDENTIALS = {
-  email: "admin@puertopuntadeleste.com",
+  email: "admin@pastamia.uy",
   password: "demo1234",
 };
 
-export const ADMIN_SESSION_KEY = "puerto-admin-demo";
+export const ADMIN_SESSION_KEY = "pastamia-admin-demo";
 
 export type ReservationStatus = "pendiente" | "confirmada" | "rechazada";
 
@@ -48,8 +48,8 @@ export const SEED_RESERVATIONS: ReservationRequest[] = [
     date: "2026-09-12",
     time: "21:15",
     guests: 5,
-    seating: "Terraza",
-    note: "Cumpleaños — si se puede, mesa contra la ventana para ver los barcos.",
+    seating: "Salón",
+    note: "Cumpleaños — si se puede, mesa contra la ventana, cerca de la cocina.",
     status: "pendiente",
     createdAt: "2026-09-09T13:40:00",
   },
@@ -61,7 +61,7 @@ export const SEED_RESERVATIONS: ReservationRequest[] = [
     date: "2026-09-12",
     time: "20:30",
     guests: 2,
-    seating: "Barra junto al horno",
+    seating: "Barra",
     status: "pendiente",
     createdAt: "2026-09-09T11:02:00",
   },
@@ -83,9 +83,9 @@ export const SEED_RESERVATIONS: ReservationRequest[] = [
     name: "Andrés Peña",
     phone: "+598 91 337 004",
     date: "2026-09-13",
-    time: "13:30",
+    time: "13:00",
     guests: 4,
-    seating: "Terraza",
+    seating: "Salón",
     status: "confirmada",
     createdAt: "2026-09-07T09:15:00",
   },
@@ -98,7 +98,7 @@ export const SEED_RESERVATIONS: ReservationRequest[] = [
     time: "22:00",
     guests: 3,
     seating: "Salón",
-    note: "Una comensal con alergia a mariscos — consulta opciones de pescado.",
+    note: "Una comensal es celíaca — consulta opciones de pasta sin TACC.",
     status: "confirmada",
     createdAt: "2026-09-06T20:48:00",
   },
@@ -109,8 +109,8 @@ export const SEED_RESERVATIONS: ReservationRequest[] = [
     date: "2026-09-11",
     time: "20:00",
     guests: 8,
-    seating: "Terraza",
-    note: "Pedían las 8 en terraza un viernes — sin lugar.",
+    seating: "Sala del fondo",
+    note: "Pedían las 8 en la sala del fondo un viernes — sin lugar.",
     status: "rechazada",
     createdAt: "2026-09-05T16:30:00",
   },

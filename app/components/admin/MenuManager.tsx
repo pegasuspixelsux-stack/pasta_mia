@@ -272,7 +272,7 @@ export function MenuManager() {
                 onChange={(e) =>
                   setDraft((d) => ({ ...d, name: e.target.value }))
                 }
-                placeholder="Corvina a la plancha"
+                placeholder="Tagliatelle al ragù bolognese"
               />
             </div>
 
@@ -284,7 +284,7 @@ export function MenuManager() {
                 onChange={(e) =>
                   setDraft((d) => ({ ...d, description: e.target.value }))
                 }
-                placeholder="Papas al romero, alioli y limón asado…"
+                placeholder="Ragù cocido a fuego lento con tomate San Marzano…"
               />
             </div>
 
@@ -298,7 +298,7 @@ export function MenuManager() {
                 onChange={(e) =>
                   setDraft((d) => ({ ...d, price: e.target.value }))
                 }
-                placeholder="860"
+                placeholder="790"
               />
             </div>
 
@@ -324,7 +324,7 @@ export function MenuManager() {
                 onChange={(e) =>
                   setDraft((d) => ({ ...d, unit: e.target.value }))
                 }
-                placeholder="Copa · 500cc · Pinta"
+                placeholder="Copa · Botella · 1/2 porción"
               />
             </div>
 

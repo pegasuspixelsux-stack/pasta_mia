@@ -35,7 +35,7 @@ function firstName(name: string) {
 function confirmMessage(r: ReservationRequest) {
   const when = dateFmt.format(new Date(`${r.date}T00:00:00`));
   const people = `${r.guests} ${r.guests === 1 ? "persona" : "personas"}`;
-  return `Hola ${firstName(r.name)}, te escribimos de Puerto. Confirmamos tu reserva para el ${when} a las ${r.time}, ${people} (${r.seating}). ¡Te esperamos!`;
+  return `Hola ${firstName(r.name)}, te escribimos de Pasta Mia. Confirmamos tu reserva para el ${when} a las ${r.time}, ${people} (${r.seating}). ¡Te esperamos!`;
 }
 
 export function ReservationsPanel({
@@ -150,7 +150,7 @@ export function ReservationsPanel({
                     <span className="text-adm-muted">{r.email}</span>
                     <a
                       href={`mailto:${r.email}?subject=${encodeURIComponent(
-                        "Tu reserva en Puerto",
+                        "Tu reserva en Pasta Mia",
                       )}&body=${encodeURIComponent(confirmMessage(r))}`}
                       className="font-medium text-adm-ink transition-colors hover:text-adm-sidebar"
                     >

@@ -63,7 +63,7 @@ export function Reservation() {
               {contact.phoneLabel}
             </a>
             <p className="mt-1 text-[0.85rem] text-muted">
-              Muelle Principal · Punta del Este
+              Pocitos · Montevideo
             </p>
           </div>
         </div>
@@ -73,7 +73,7 @@ export function Reservation() {
             e.preventDefault();
             if (ready) setSent(true);
           }}
-          className="rounded-[16px] border border-line bg-canvas p-6 shadow-[0_24px_60px_-32px_rgba(15,23,42,0.28)] sm:p-9"
+          className="rounded-[16px] border border-line bg-white p-6 shadow-[0_24px_60px_-32px_rgba(44,34,30,0.22)] sm:p-9"
         >
           <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2">
             <div>
@@ -212,11 +212,11 @@ function SelectField({
         required
         className={`${fieldBase} pr-7 ${value === "" ? "text-faint" : ""}`}
       >
-        <option value="" disabled className="bg-[#02033f] text-faint">
+        <option value="" disabled className="bg-white text-faint">
           {placeholder}
         </option>
         {options.map((o) => (
-          <option key={o} value={o} className="bg-[#02033f] text-[#f2f7fb]">
+          <option key={o} value={o} className="bg-white text-ink">
             {o}
           </option>
         ))}

@@ -1,5 +1,5 @@
 /**
- * Carta de Puerto (página /menu).
+ * Carta de Pasta Mia (página /menu).
  *
  * PARCIAL — sembrado con algunos platos de muestra. Completar `MENU_DATA`
  * cuando llegue la carta entera del local.
@@ -12,7 +12,7 @@ export interface MenuItem {
   name: string;
   description?: string;
   price: number;
-  unit?: string; // "500cc", "1/2 Pinta", "Pinta", "Copa", "Botella"
+  unit?: string; // "Copa", "Botella", "1/2 porción"
   priceSecondary?: number; // p. ej. precio de botella cuando hay precio de copa
   category:
     | "entradas"
@@ -32,7 +32,7 @@ export interface MenuItem {
   image?: string;
 }
 
-/** Unsplash helper — reemplazar por fotos propias del local. */
+/** Unsplash helper — VERIFICAR y reemplazar por fotos propias del local. */
 const IMG = (id: string) =>
   `https://images.unsplash.com/photo-${id}?w=800&q=75&auto=format&fit=crop`;
 
@@ -45,13 +45,13 @@ export const sectionLabels: Record<MenuItem["tags"][number], string> = {
 export const sectionOrder: MenuItem["tags"][number][] = ["lunch", "dinner", "bar"];
 
 export const categoryLabels: Record<MenuItem["category"], string> = {
-  entradas: "Entradas y minutas",
+  entradas: "Antipasti",
   pescados: "Pescados",
   mariscos: "Mariscos",
   pastas: "Pastas",
-  parrilla: "Parrilla de mar",
+  parrilla: "Del horno",
   ensaladas: "Ensaladas",
-  postres: "Postres",
+  postres: "Dolci",
   vinos: "Vinos",
   cervezas: "Cervezas",
   cocteles: "Cócteles",
@@ -60,12 +60,12 @@ export const categoryLabels: Record<MenuItem["category"], string> = {
 
 export const categoryOrder: MenuItem["category"][] = [
   "entradas",
-  "pescados",
-  "mariscos",
   "pastas",
   "parrilla",
   "ensaladas",
   "postres",
+  "pescados",
+  "mariscos",
   "vinos",
   "cervezas",
   "cocteles",
@@ -74,97 +74,110 @@ export const categoryOrder: MenuItem["category"][] = [
 
 export const MENU_DATA: MenuItem[] = [
   {
-    id: "e1",
-    name: "Rabas a la andaluza",
+    id: "a1",
+    name: "Burrata con tomates asados",
     description:
-      "Anillas de calamar rebozadas finas, limón y sal marina, alioli de ajo asado",
-    price: 640,
+      "Burrata fresca, tomates cherry asados, albahaca y aceite de oliva virgen extra",
+    price: 520,
     category: "entradas",
     tags: ["lunch", "dinner", "bar"],
-    image: IMG("1579670039509-e21e75007e4c"),
-  },
-  {
-    id: "e2",
-    name: "Mejillones a la provenzal",
-    description: "Ajo, perejil, vino blanco y pan tostado",
-    price: 590,
-    category: "entradas",
-    tags: ["dinner", "bar"],
     image: IMG("1516687773447-14c58c40816e"),
   },
   {
-    id: "f1",
-    name: "Pesca del Día a la Sal",
+    id: "a2",
+    name: "Arancini de ragù",
     description:
-      "Corvina negra entera en costra de sal marina, papas al romero y manteca de hierbas del puerto",
-    price: 890,
-    category: "pescados",
-    tags: ["lunch", "dinner"],
-    image: IMG("1534422298391-e4f8c172dddb"),
-  },
-  {
-    id: "f2",
-    name: "Corvina a la plancha",
-    description: "Con papas al romero, alioli y limón asado",
-    price: 860,
-    category: "pescados",
-    tags: ["lunch", "dinner"],
-    image: IMG("1519233991914-26a44330ccd7"),
-  },
-  {
-    id: "m1",
-    name: "Cazuela de mariscos",
-    description:
-      "Mejillones, chipirones, langostinos y almejas en fumet de azafrán",
-    price: 940,
-    category: "mariscos",
-    tags: ["dinner"],
-    image: IMG("1571167366136-b57e07761625"),
+      "Bolas de risotto rellenas de ragù, empanadas y fritas, con parmesano",
+    price: 460,
+    category: "entradas",
+    tags: ["dinner", "bar"],
+    image: IMG("1579670039509-e21e75007e4c"),
   },
   {
     id: "pa1",
-    name: "Linguine Frutti di Mare",
+    name: "Tagliatelle al Ragù Bolognese",
     description:
-      "Pasta artesanal al huevo salteada con mejillones frescos, chipirones tiernos, langostinos y vino blanco",
-    price: 760,
+      "Ragù de carne vacuna y de cerdo cocido a fuego lento por horas con tomate San Marzano",
+    price: 790,
+    category: "pastas",
+    tags: ["lunch", "dinner"],
+    image: IMG("1473093226795-af9932fe5856"),
+  },
+  {
+    id: "pa2",
+    name: "Ravioli di Ricotta e Spinaci",
+    description:
+      "Pasta plegada a mano rellena de ricota fresca y espinaca, manteca de salvia tostada",
+    price: 740,
     category: "pastas",
     tags: ["lunch", "dinner"],
     image: IMG("1569494315581-abddb8d41cfe"),
   },
   {
-    id: "pr1",
-    name: "Pulpo a la parrilla",
-    description: "Tentáculo grillado, puré de papa ahumada y pimentón",
-    price: 880,
+    id: "pa3",
+    name: "Gnocchi alla Sorrentina",
+    description:
+      "Ñoquis de papa al horno de leña con fior di latte y albahaca",
+    price: 710,
+    category: "pastas",
+    tags: ["lunch", "dinner"],
+    image: IMG("1551183053-bf91a1d81141"),
+  },
+  {
+    id: "pa4",
+    name: "Spaghetti alla Carbonara",
+    description:
+      "Huevo, guanciale, pecorino romano y pimienta negra. Sin crema, como en Roma",
+    price: 720,
+    category: "pastas",
+    tags: ["lunch", "dinner"],
+    image: IMG("1481931098730-318b6f776db0"),
+  },
+  {
+    id: "h1",
+    name: "Lasagna della Nonna",
+    description:
+      "Capas de pasta al huevo, ragù, besciamella y parmesano, al horno",
+    price: 780,
     category: "parrilla",
     tags: ["dinner"],
-    image: IMG("1575840925760-d98bb91c7f7b"),
+    image: IMG("1571167366136-b57e07761625"),
   },
   {
     id: "en1",
-    name: "Ensalada Costera de Pulpo",
+    name: "Ensalada Tricolore",
     description:
-      "Pulpo a la brasa sobre hojas verdes estivales, tomates cherry confitados y vinagreta de limón y alcaparras",
-    price: 680,
+      "Rúcula, tomate, muzzarella fresca, aceite de oliva y vinagre balsámico",
+    price: 480,
     category: "ensaladas",
     tags: ["lunch", "dinner"],
     image: IMG("1540420773420-3366772f4999"),
   },
   {
+    id: "d1",
+    name: "Tiramisú de la casa",
+    description:
+      "Mascarpone, café espresso, cacao y bizcochos. Receta de familia",
+    price: 380,
+    category: "postres",
+    tags: ["lunch", "dinner", "bar"],
+    image: IMG("1571877227200-a0d98ea607e9"),
+  },
+  {
     id: "v1",
-    name: "Albariño",
-    description: "Rías Baixas — cítrico y salino, va con todo lo de mar",
-    price: 320,
-    priceSecondary: 1480,
+    name: "Chianti Classico",
+    description: "Toscana — sangiovese, fruta roja y final seco, va con el ragù",
+    price: 340,
+    priceSecondary: 1560,
     unit: "Copa",
     category: "vinos",
     tags: ["lunch", "dinner", "bar"],
   },
   {
     id: "c1",
-    name: "Spritz de pomelo",
-    description: "Aperol, pomelo, espumante, borde con sal de mar",
-    price: 420,
+    name: "Negroni de la casa",
+    description: "Gin, Campari, vermut rojo, cáscara de naranja quemada",
+    price: 440,
     category: "cocteles",
     tags: ["bar", "dinner"],
   },

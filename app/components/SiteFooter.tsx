@@ -10,11 +10,11 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div className="max-w-[34ch]">
             <p className="font-display text-2xl tracking-[-0.01em] text-ink">
-              Puerto<span className="text-gold">.</span>
+              Pasta Mia<span className="text-gold">.</span>
             </p>
             <p className="mt-4 text-[0.92rem] leading-relaxed text-muted">
-              Restaurante de mar y terraza náutica en el muelle del Puerto de
-              Punta del Este. Tradición, frescura y atardeceres únicos.
+              Trattoria de pasta fresca hecha a mano en Pocitos, Montevideo. Masa
+              del día, salsas a fuego lento y vinos italianos.
             </p>
           </div>
 
@@ -64,7 +64,7 @@ export function SiteFooter() {
 
         <div className="mt-14 border-t border-line pt-8">
           <h3 className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
-            Amarre
+            Dónde estamos
           </h3>
           <div className="mt-5 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {locations.map((loc) => (
@@ -90,7 +90,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-14 flex flex-col gap-2 border-t border-line pt-8 text-[0.8rem] text-faint sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} Puerto. Una maqueta de diseño — no es un negocio real.</p>
+          <p>© {year} Pasta Mia. Una maqueta de diseño — no es un negocio real.</p>
           <p className="flex items-center gap-3">
             <Link
               href="/admin"
@@ -100,7 +100,7 @@ export function SiteFooter() {
             </Link>
             <span aria-hidden>·</span>
             <span>
-              Punta del Este, Uruguay · Fotografía vía{" "}
+              Montevideo, Uruguay · Fotografía vía{" "}
               <a
                 href="https://unsplash.com/license"
                 className="text-muted underline decoration-line underline-offset-4 transition-colors hover:text-ink"

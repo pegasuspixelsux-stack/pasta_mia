@@ -1,50 +1,52 @@
 /**
- * Contenido estático para la maqueta de la home de Puerto.
+ * Contenido estático para la maqueta de la home de Pasta Mia.
  *
- * Puerto no es un negocio real. La dirección, el teléfono, el horario y los
- * precios de abajo son marcadores plausibles para el puerto de Punta del Este
- * — reemplazalos por datos reales antes de cualquier uso en producción.
+ * Pasta Mia no es un negocio real. La dirección, el teléfono, el horario y los
+ * precios de abajo son marcadores plausibles para una trattoria de barrio en
+ * Montevideo — reemplazalos por datos reales antes de cualquier uso en
+ * producción.
  *
- * Fotografía: Unsplash (unsplash.com/license). Reemplazá los IDs `photo` por
- * imágenes con licencia o propias y acreditá a los fotógrafos según haga falta.
+ * Fotografía: Unsplash (unsplash.com/license). Los IDs `photo` de abajo son
+ * marcadores — VERIFICÁ cada imagen y reemplazala por fotos con licencia o
+ * propias del local, y acreditá a los fotógrafos según haga falta.
  */
 
 const U = "https://images.unsplash.com/photo-";
 const q = "&q=80&auto=format&fit=crop";
 
 export const img = {
-  hero: `${U}1701906876373-54a5452b149f?w=2200&ar=16:10${q}`,
-  midday: `${U}1534422298391-e4f8c172dddb?w=1400&ar=1:1${q}`,
-  dinner: `${U}1571167366136-b57e07761625?w=1400&ar=1:1${q}`,
-  bar: `${U}1590947132387-155cc02f3212?w=1400&ar=1:1${q}`,
-  atmosphere: `${U}1559339352-11d035aa65de?w=1700&ar=4:3${q}`,
+  hero: `${U}1473093226795-af9932fe5856?w=2200&ar=16:10${q}`,
+  midday: `${U}1551183053-bf91a1d81141?w=1400&ar=1:1${q}`,
+  dinner: `${U}1481931098730-318b6f776db0?w=1400&ar=1:1${q}`,
+  bar: `${U}1510812431401-41d2bd2722f3?w=1400&ar=1:1${q}`,
+  atmosphere: `${U}1414235077428-338989a2e8c0?w=1700&ar=4:3${q}`,
 };
 
 export const nav = [
-  { label: "La Carta Náutica", href: "/menu" },
-  { label: "Nuestra Esquina", href: "/#nosotros" },
-  { label: "Amarre & Reservas", href: "/#reserve" },
+  { label: "La Carta", href: "/menu" },
+  { label: "La Casa", href: "/#nosotros" },
+  { label: "Reservas", href: "/#reserve" },
 ] as const;
 
 export const hero = {
-  place: "Frente al Muelle Principal",
-  title: ["El sabor del mar,", "directo a tu mesa."],
+  place: "Trattoria de barrio — Pocitos",
+  title: ["Pasta fresca hecha a mano,", "recetas de familia y vino."],
   subtitle:
-    "Pescados del día, mariscos frescos de roca, pastas marineras y ensaladas estivales con la postal más hermosa de la bahía.",
-  cta: "Ver la carta de mar",
+    "Amasamos todos los días, las salsas se cocinan a fuego lento y el pan sale caliente a la mesa. Una carta corta de clásicos italianos, hecha como en casa.",
+  cta: "Ver la carta de pastas",
 };
 
 export const intro = {
-  kicker: "Tradición costera",
-  title: "Un refugio de mar en el corazón del puerto de Punta del Este.",
+  kicker: "Cocina de familia",
+  title: "Una trattoria de barrio donde se amasa a mano todas las mañanas.",
   columns: [
     {
-      title: "Almuerzos al sol",
-      body: "Pesca del día y ensaladas frescas en la terraza abierta, mientras entran y salen los botes.",
+      title: "La masa, cada mañana",
+      body: "Harina, huevos y tiempo. Estiramos la pasta del día temprano — tagliatelle, ravioli, gnocchi — y se cocina apenas la pedís.",
     },
     {
-      title: "Cenas y atardeceres",
-      body: "La sala baja la luz, salen las pastas marineras y la coctelería de autor, y el puerto se apaga del otro lado de las ventanas.",
+      title: "Salsas a fuego lento",
+      body: "El ragù se cocina por horas y el tomate San Marzano se hace despacio. Recetas que pasaron de nonna a nieta sin cambiar una coma.",
     },
   ],
 };
@@ -52,20 +54,20 @@ export const intro = {
 export const experiences = [
   {
     id: "the-midday",
-    kicker: "12:30 — 16:00",
+    kicker: "12:00 — 15:30",
     title: "El Mediodía",
-    body: "Mesas abiertas al agua, una carta corta que sale de lo que trajeron los botes a la mañana, y vino por copa hasta que se termina la tarde.",
+    body: "Menú corto del día, pasta recién estirada y una copa de vino de la casa. Mesas tranquilas antes de que se llene el salón.",
     image: img.midday,
-    alt: "Un pescado a la plancha con limón y papas al romero sobre una mesa de mármol junto a la ventana.",
+    alt: "Un plato de tagliatelle con salsa de tomate y albahaca sobre una mesa de madera junto a la ventana.",
     link: "Reservá una mesa para el mediodía",
     detail: {
       trigger: "Hoy en la carta",
-      lead: "La carta del mediodía es corta y se arma con la pesca de la mañana. Un día reciente fue así:",
+      lead: "El menú del mediodía es corto y se arma con lo que se amasó a la mañana. Un día reciente fue así:",
       items: [
-        "Corvina a la plancha — papas al romero y alioli de ajo asado",
-        "Chipirones a la andaluza — rebozados finos, limón y sal marina",
-        "Rabas con salsa criolla — clásicas, para compartir",
-        "Ensalada de pulpo — papa, aceituna, cherry confitado, vinagreta de limón",
+        "Tagliatelle al ragù bolognese — carne cocida a fuego lento con tomate San Marzano",
+        "Ravioli di ricotta e spinaci — manteca de salvia tostada",
+        "Gnocchi alla sorrentina — fior di latte y albahaca, al horno",
+        "Ensalada tricolore — rúcula, tomate, muzzarella y aceite de oliva",
       ],
     },
   },
@@ -73,47 +75,47 @@ export const experiences = [
     id: "the-dinner",
     kicker: "20:00 — 00:00",
     title: "La Cena",
-    body: "La sala baja la luz y se pone cálida. La carta entera — entradas, pescados al horno, cazuelas de mariscos y cortes de la parrilla — velas sobre las copas, y el puerto oscureciéndose del otro lado de las ventanas.",
+    body: "La sala baja la luz y se pone cálida. La carta entera — antipasti, pastas rellenas, ragù de olla y clásicos al horno — velas sobre las mesas y pan recién horneado.",
     image: img.dinner,
-    alt: "Una cazuela de mariscos humeante sobre una mesa oscura con luz de vela.",
+    alt: "Un plato de pasta cremosa humeante sobre una mesa oscura con luz de vela.",
     link: "Reservá una mesa para la cena",
     detail: {
       trigger: "Bueno saber",
-      lead: "Algunas notas antes de reservar el servicio de la noche:",
+      lead: "Algunas notas antes de reservar la noche:",
       items: [
-        "El pescado del día se anuncia en la mesa — según lo que entró",
+        "La pasta del día se anuncia en la mesa — según lo que se amasó",
         "Última comanda a la cocina 23:30; la cocina cierra a medianoche",
-        "La barra del puerto (seis lugares) se reserva solo por teléfono",
-        "Avisá por alergias a mariscos — se cocina mucho marisco en la misma cocina",
+        "Grupos de más de 8 arman menú cerrado — se coordina por teléfono",
+        "Avisá si sos celíaco o tenés alergias — se trabaja mucha harina en la misma cocina",
       ],
     },
   },
   {
     id: "the-bar",
     kicker: "19:00 — tarde",
-    title: "El Bar",
-    body: "Mariscos y sfizi en la barra de mármol — rabas, mejillones a la provenzal, croquetas de merluza — una carta de blancos y espumantes que vale quedarse, y cocina del mismo mar hasta cerrar.",
+    title: "La Barra",
+    body: "Antipasti y una copa en la barra de madera — burrata, tabla de fiambres, arancini — una carta de tintos italianos que vale quedarse, y cocina del mismo horno hasta cerrar.",
     image: img.bar,
-    alt: "Una mano levantando una copa de vino blanco sobre una barra de mármol junto a una fuente de mejillones.",
-    link: "Ver el bar",
+    alt: "Una mano levantando una copa de vino tinto sobre una barra de madera junto a una tabla de fiambres.",
+    link: "Ver la barra",
     detail: {
       trigger: "Desde la barra",
       lead: "La carta se mueve con la temporada. Los fijos que se quedan:",
       items: [
-        "Mejillones a la provenzal — ajo, perejil, vino blanco, pan tostado",
-        "Rabas y una copa de albariño",
-        "Croquetas de merluza con alioli",
-        "Spritz de pomelo, borde con sal de mar",
+        "Burrata con tomates asados, albahaca y aceite de oliva",
+        "Arancini de ragù con parmesano",
+        "Tabla de fiambres y quesos italianos",
+        "Negroni de la casa, cáscara de naranja quemada",
       ],
     },
   },
 ] as const;
 
 export const atmosphere = {
-  title: ["Seguimos el horario", "que marca el muelle."],
+  title: ["Cocinamos al ritmo", "que marca la masa."],
   paragraphs: [
-    "El pescado llega fresco cada mañana y la carta se arma con lo que entró, así que cambia un poco con el día y con la marea. Armamos el lugar mirando al agua — ventanales abiertos, una terraza que sigue el sol, y una barra desde donde se ven los barcos.",
-    "Cenas privadas, degustaciones y celebraciones chicas toman la sala este o toda la terraza. Contanos la ocasión y cuántos son, y armamos un menú alrededor de la pesca del día.",
+    "La pasta se amasa cada mañana y el menú del día se arma con lo que salió de la mesa de trabajo, así que cambia un poco según el día. Armamos el lugar como una casa — mesas de madera, mantel a cuadros, la cocina a la vista y una barra desde donde se ve hervir la olla.",
+    "Cenas privadas, cumpleaños y sobremesas largas toman la sala del fondo o el salón entero. Contanos la ocasión y cuántos son, y armamos un menú alrededor de la pasta del día.",
   ],
   cta: "Consultá por eventos",
 };
@@ -125,89 +127,89 @@ export const reviewsIntro = {
 
 export const reviews = [
   {
-    author: "Comensal local",
+    author: "Comensal del barrio",
     rating: 5,
     quote:
-      "Una joya para quien busca pescado fresco y bien hecho. La corvina a la plancha estaba impecable y la vista al puerto no falla.",
+      "La pasta al huevo se nota que es del día. Los tagliatelle al ragù estaban como los de mi abuela y el pan caliente no paraba de venir.",
+    meta: "$700–900",
+  },
+  {
+    author: "Pareja de Pocitos",
+    rating: 5,
+    quote:
+      "Los ravioli de ricota y espinaca con manteca de salvia, una locura. Buena carta de tintos italianos por copa. Siempre lleno, conviene reservar.",
+    meta: "$1.400–1.700",
+  },
+  {
+    author: "Visitante de Buenos Aires",
+    rating: 5,
+    quote:
+      "Los gnocchi alla sorrentina salen del horno burbujeando y la salsa de tomate San Marzano está hecha con paciencia. Volvimos dos veces en el viaje.",
+    meta: "Cena",
+  },
+  {
+    author: "Familia, Montevideo",
+    rating: 5,
+    quote:
+      "Nos quedamos tres horas. Pan casero, pasta fresca, un tinto de la casa buenísimo y de postre un tiramisú que todavía recuerdo.",
     meta: "$900–1.100",
   },
   {
-    author: "Pareja de Montevideo",
+    author: "Clienta habitual",
     rating: 5,
     quote:
-      "Excelente cocina de mar. Casi siempre se llena, así que conviene reservar. El albariño por copa, buenísimo.",
-    meta: "$1.600–1.800",
-  },
-  {
-    author: "Visitante de temporada",
-    rating: 5,
-    quote:
-      "Probamos la cazuela de mariscos y las rabas y estaban para repetir. Súper recomendable si visitás Punta del Este.",
-    meta: "Cena",
-  },
-  {
-    author: "Turista de Buenos Aires",
-    rating: 5,
-    quote:
-      "Por lejos el mejor pescado que comimos en la costa. Ambiente relajado y atención de primera.",
+      "Vengo cada semana. La masa siempre igual de buena, las salsas a fuego lento y te tratan como de la familia. El ragù del domingo es sagrado.",
     meta: "Comer allí",
   },
   {
-    author: "Familia, Punta del Este",
+    author: "Turista de Santiago",
     rating: 5,
     quote:
-      "Cuando estés en Punta no te podés perder este lugar. Terraza sobre el muelle y mariscos espectaculares. El pulpo, buenísimo.",
-    meta: "$1.000–1.200",
-  },
-  {
-    author: "Cliente habitual",
-    rating: 5,
-    quote:
-      "Pescado del día a precio razonable y gran ambiente. Con una entrada para compartir y un pescado alcanza perfecto para dos.",
-    meta: "Cena",
+      "Trattoria de verdad: mantel a cuadros, cocina a la vista y pasta hecha a mano. Pedí los tagliatelle y una copa de Chianti y salí feliz.",
+    meta: "$800–1.000",
   },
 ] as const;
 
 export const galleryIntro = {
-  title: "Un vistazo al local",
-  lede: "La barra, los platos y algunos momentos frente al agua.",
+  title: "Un vistazo a la casa",
+  lede: "La barra, los platos y la masa del día.",
 };
 
 export const gallery = [
-  { src: img.hero, alt: "Los yates en el Muelle Principal", size: "hero" },
-  { src: img.midday, alt: "Pescado apenas salido de la plancha", size: "square" },
+  { src: img.hero, alt: "Tagliatelle recién servidos", size: "hero" },
+  { src: img.midday, alt: "La pasta del mediodía junto a la ventana", size: "square" },
   {
     src: `${U}1467003909585-2f8a72700288?w=1400&ar=3:4${q}`,
-    alt: "La mesa cuando baja la luz",
+    alt: "La sala a media luz",
     size: "tall",
   },
   {
     src: `${U}1536935338788-846bb9981813?w=1200&ar=1:1${q}`,
-    alt: "De la barra",
+    alt: "Desde la barra",
     size: "square",
   },
   {
     src: `${U}1509440159596-0249088772ff?w=1800&ar=21:9${q}`,
-    alt: "Entradas para compartir",
+    alt: "Antipasti para compartir",
     size: "wide",
   },
   {
     src: `${U}1571877227200-a0d98ea607e9?w=1200&ar=1:1${q}`,
-    alt: "Postres de la casa",
+    alt: "Tiramisú de la casa",
     size: "square",
   },
   {
     src: `${U}1615141982883-c7ad0e69fd62?w=1200&ar=1:1${q}`,
-    alt: "Lo que entró hoy",
+    alt: "Lo que salió del horno hoy",
     size: "square",
   },
 ] as const;
 
 export const reservation = {
   title: "Reservá una mesa",
-  lede: "Decinos cuándo y para cuántos. Guardamos la terraza y el salón por separado, así que elegí la sala donde querés estar.",
+  lede: "Decinos cuándo y para cuántos. Guardamos el salón y la sala del fondo por separado, así que elegí dónde querés sentarte.",
   note: "Maqueta de diseño — el formulario no envía nada. Para una reserva real, llamá al número de abajo.",
-  times: ["12:30", "13:30", "15:00", "20:00", "20:30", "21:15", "22:00"],
+  times: ["12:00", "13:00", "14:30", "20:00", "20:30", "21:15", "22:00"],
   guests: [
     "1 persona",
     "2 personas",
@@ -217,24 +219,24 @@ export const reservation = {
     "6 personas",
     "7+ — llamanos",
   ],
-  seatings: ["Terraza", "Salón", "Barra del puerto"],
+  seatings: ["Salón", "Sala del fondo", "Barra"],
 };
 
 export const contact = {
-  phoneLabel: "+598 4244 8899",
-  phoneHref: "tel:+59842448899",
-  emailLabel: "reservas@puertopuntadeleste.com",
-  emailHref: "mailto:reservas@puertopuntadeleste.com",
+  phoneLabel: "+598 2709 4412",
+  phoneHref: "tel:+59827094412",
+  emailLabel: "hola@pastamia.uy",
+  emailHref: "mailto:hola@pastamia.uy",
 };
 
 export const locations = [
   {
-    id: "puerto",
-    name: "Muelle Principal",
-    address: "Calle 27 y Las Focas, Muelle Principal, Punta del Este",
-    phoneLabel: "+598 4244 8899",
-    phoneHref: "tel:+59842448899",
-    hours: "Martes a domingo · 12:00 – 00:00 · Lunes cerrado",
+    id: "pocitos",
+    name: "La casa",
+    address: "Juan Benito Blanco 1234, Pocitos, Montevideo",
+    phoneLabel: "+598 2709 4412",
+    phoneHref: "tel:+59827094412",
+    hours: "Martes a domingo · 12:00 – 00:00 · Lunes cerrado para amasar de nuevo",
   },
 ];
 
@@ -244,7 +246,7 @@ export const footerLinks = [
     items: [
       { label: "La Carta", href: "/menu" },
       { label: "La Cocina", href: "/#experiences" },
-      { label: "Bar", href: "/#bar" },
+      { label: "La Barra", href: "/#bar" },
       { label: "Eventos privados", href: "/#atmosphere" },
       { label: "Galería", href: "/#galeria" },
       { label: "Opiniones", href: "/#opiniones" },
@@ -255,7 +257,7 @@ export const footerLinks = [
     heading: "Cocina",
     items: [
       { label: "La Carta completa", href: "/menu" },
-      { label: "Vinos y cócteles", href: "/#bar" },
+      { label: "Vinos italianos", href: "/#bar" },
       { label: "Notas dietéticas", href: "/#reserve" },
       { label: "Tarjetas de regalo", href: "/#reserve" },
     ],

@@ -23,7 +23,7 @@ export function Reviews() {
               key={rev.author}
               as="figure"
               delay={(i % 3) * 0.06}
-              className="flex h-full flex-col justify-between rounded-[14px] border border-line bg-canvas p-6 ring-1 ring-ink/[0.04]"
+              className="flex h-full flex-col justify-between rounded-[14px] border border-line bg-white p-6 ring-1 ring-ink/[0.04]"
             >
               <div>
                 <div

@@ -44,7 +44,7 @@ export function SiteHeader() {
               solid ? "text-ink" : "text-ink",
             ].join(" ")}
           >
-            Puerto<span className="text-gold">.</span>
+Pasta Mia<span className="text-gold">.</span>
           </Link>
 
           <nav className="hidden items-center gap-9 md:flex">

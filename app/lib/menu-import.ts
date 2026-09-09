@@ -150,7 +150,7 @@ export async function parseMenuFile(file: File): Promise<ImportResult> {
 
 export const CSV_TEMPLATE = [
   "name,description,price,category,tags,image,published",
-  '"Rabas a la andaluza","Calamar rebozado, limón y sal marina",640,entradas,lunch dinner bar,,true',
-  '"Corvina a la plancha","Papas al romero y alioli",860,pescados,lunch dinner,,true',
-  '"Spritz de pomelo","Aperol, pomelo, espumante, sal de mar",420,cocteles,bar,,true',
+  '"Burrata con tomates asados","Burrata fresca, tomates cherry, albahaca y aceite de oliva",520,entradas,lunch dinner bar,,true',
+  '"Tagliatelle al ragù bolognese","Ragù a fuego lento con tomate San Marzano",790,pastas,lunch dinner,,true',
+  '"Negroni de la casa","Gin, Campari, vermut rojo, naranja quemada",440,cocteles,bar,,true',
 ].join("\n");

@@ -28,11 +28,13 @@ export function ChevronDown(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export function Compass(props: SVGProps<SVGSVGElement>) {
+export function Sprig(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...base} {...props}>
-      <circle cx="12" cy="12" r="9" />
-      <path d="m15.5 8.5-2 5-5 2 2-5 5-2Z" />
+      <path d="M12 21V7" />
+      <path d="M12 12c0-2.5 1.9-4.6 4.2-4.6-.2 2.8-2.1 4.6-4.2 4.6Z" />
+      <path d="M12 15.5c0-2.5-1.9-4.6-4.2-4.6.2 2.8 2.1 4.6 4.2 4.6Z" />
+      <path d="M12 8c0-2.8 1.7-5 4-5-.1 3-1.9 5-4 5Z" />
     </svg>
   );
 }

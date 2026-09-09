@@ -1,35 +1,39 @@
-# Puerto — Design system
+# Pasta Mia — Design system
 
-Ground truth for the homepage as built (`app/`). Marine editorial — one room
-on the main pier at Punta del Este, in the deep tones of the harbour at night,
-seen through the three services of a day. Copy is Spanish (Uruguay), voseo.
+Ground truth for the homepage as built (`app/`). Warm editorial — one
+neighbourhood trattoria in Pocitos, Montevideo, seen through the three services
+of a day, in the warm tones of cream, wheat and terracotta. Copy is Spanish
+(Uruguay), voseo.
 
 ## Tokens
 
 Defined in `app/globals.css` under `@theme`. Use the Tailwind utilities they
 generate (`bg-canvas`, `text-ink`, `text-muted`, `border-line`, …).
 
-Surfaces layer deep indigo > deeper indigo > trench, front to back.
+Surfaces layer cream > warm cream > wheat, front to back.
 
-NOTE: `--color-gold` and `--color-ocean` hold a light blue in this theme — the
-token names were kept when the palette moved from terracotta to marine to avoid
-a rename sweep across every component. Read `gold` as "the accent", not a colour.
+NOTE: `--color-gold` and `--color-ocean` hold the terracotta accent — the token
+names were kept when the palette moved (terracotta → marine → terracotta) to
+avoid a rename sweep across every component. Read `gold` as "the accent".
 
 | Token | Value | Role |
 | --- | --- | --- |
-| `canvas` | `#03045e` | Primary surface — body, cards, nav |
-| `mist` | `#02033f` | Deeper section tint (Hero, Experiences, Footer) |
-| `sand` | `#01012a` | Reservation section — the form card floats on it |
-| `shell` | `#26306e` | Steel — image placeholder, disabled control fill |
-| `ink` | `#f2f7fb` | Cool near-white — headings, primary text, solid buttons |
-| `ink-soft` | `#dbe6f1` | Secondary headings, list copy |
-| `muted` | `#aec3d8` | Cool grey-blue — body / supporting text |
-| `faint` | `#89a1ba` | Dim slate — placeholders, fine print |
-| `line` | `#2a2f70` | Steel hairline borders, dividers |
-| `gold` | `#79c2e3` | Accent — brand dot, datelines, chevrons, hairlines, focus |
-| `gold-soft` | `#a5dbef` | Lighter accent / accent hover |
-| `ocean` | `#79c2e3` | Interactive — text links, active form controls, focus ring |
-| `ocean-deep` | `#a5dbef` | Link / control hover |
+| `canvas` | `#fdfbf7` | Primary surface — body, nav, base sections, is the ground for white cards |
+| `mist` | `#f7f0e4` | Deeper warm tint (Hero, Experiences, Reviews, Footer) |
+| `sand` | `#f1e7d6` | Reservation section — the form card floats on it |
+| `shell` | `#e8dac2` | Wheat — image placeholder, disabled control fill |
+| `ink` | `#2c221e` | Espresso — headings, primary text, solid buttons |
+| `ink-soft` | `#4a3a32` | Secondary headings, list copy |
+| `muted` | `#6f5d51` | Warm brown-grey — body / supporting text |
+| `faint` | `#9c8a7b` | Dim taupe — placeholders, fine print |
+| `line` | `#e6dac6` | Warm hairline borders, dividers |
+| `gold` | `#bc4749` | Accent — brand dot, datelines, chevrons, hairlines, stars, focus |
+| `gold-soft` | `#d08c6a` | Warm clay — lighter accent / accent hover / light text on dark admin surfaces |
+| `ocean` | `#bc4749` | Interactive — text links, active form controls, focus ring |
+| `ocean-deep` | `#9e3a3c` | Link / control hover |
+
+Cards (`Reviews`, the `Reservation` form) are `bg-white` with a `border-line`
+hairline, so they lift off the cream/`mist` sections.
 
 Spacing rhythm: `--spacing-section` (`clamp(4.5rem, 10vw, 8.5rem)`) between
 major sections; `--spacing-section-tight` for the intro band.
@@ -41,8 +45,8 @@ Standard easing: `cubic-bezier(0.16, 1, 0.3, 1)` (exponential out).
   headings, 400 italic for accents. Tracking `-0.022em` at hero
   scale, `-0.02em` elsewhere. Hero clamps to `5.5rem`; section headings to
   ~`3.1rem`. Used only for large headings and the wordmark.
-- **Body / UI** — Plus Jakarta Sans (`font-sans`). Body `1rem`/relaxed,
-  `muted`. Small-caps markers: `0.7–0.76rem`, weight 600, tracking `0.18–0.3em`,
+- **Body / UI** — Montserrat (`font-sans`). Body `1rem`/relaxed, `muted`.
+  Small-caps markers: `0.7–0.76rem`, weight 600, tracking `0.18–0.3em`,
   uppercase — used only for datelines and time ranges that carry real
   information, never as a decorative kicker.
 - Both self-hosted via `next/font/google` in `app/layout.tsx`.
@@ -51,9 +55,10 @@ Standard easing: `cubic-bezier(0.16, 1, 0.3, 1)` (exponential out).
 
 - **Nav** (`SiteHeader`) — fixed; transparent over the hero, transitioning to
   `bg-canvas/80 backdrop-blur-md` with a `border-line` hairline and a faint
-  shadow past 24px scroll. Ink text, accent brand dot, outline Reserve pill.
-- **Photography** — full-bleed, under navy gradients (`.scrim-hero`,
-  `.scrim-soft`) that settle the photo into the harbour tones. Experience
+  shadow past 24px scroll. Espresso text, terracotta brand dot, outline
+  Reserve pill. Wordmark "Pasta Mia".
+- **Photography** — full-bleed, under cream gradients (`.scrim-hero`,
+  `.scrim-soft`) that settle the photo into the warm surface tones. Experience
   images: rounded `14px`, `ring-1 ring-ink/[0.06]`, `bg-shell` placeholder,
   hover `scale-[1.04]`.
 - **Hero entrance** — CSS keyframes only (`hero-settle`, `line-rise`): image
@@ -76,7 +81,7 @@ Standard easing: `cubic-bezier(0.16, 1, 0.3, 1)` (exponential out).
 `app/page.tsx` composes: `SiteHeader` · `Hero` (full viewport, two-column on
 `lg` — copy left, `HeroReviews` block right) · `Intro`
 (two-column band — kicker + statement left, two teasers right; `#nosotros`) ·
-`Experiences` (el mediodía / la cena / el bar as
+`Experiences` (el mediodía / la cena / la barra as
 alternating image/text rows + accordions) · `Atmosphere` (split image/text) ·
 `Reviews` (3-col quote cards on mist) · `Reservation` (static form, card on
 sand) · `SiteFooter` (multi-column + one location). Max content width `84rem`;
@@ -87,9 +92,12 @@ nav links smooth-scroll to section ids.
 - All content is static; the reservation form does not submit (see
   `app/lib/content.ts`).
 - Contact details, hours and menu items are plausible placeholders for a
-  seafood restaurant on the Punta del Este pier — replace before production.
+  neighbourhood pasta trattoria in Pocitos, Montevideo — replace before
+  production.
 - Imagery is Unsplash; only `images.unsplash.com` is allowlisted in
-  `next.config.ts`.
-- The admin panel (`app/admin`) keeps a light workspace with the navy sidebar;
-  its status colours (green ok / amber pending / red danger) are role-based and
-  not part of the marine palette.
+  `next.config.ts`. **The `photo` IDs in `content.ts` / `menu.ts` are markers —
+  verify each image and replace with licensed or in-house photography.**
+- The admin panel (`app/admin`) keeps a light workspace with an espresso
+  sidebar; its dark sidebar/login surfaces use explicit `text-white/*` rather
+  than the theme ink tokens. Status colours (green ok / amber pending / red
+  danger) are role-based and not part of the trattoria palette.
