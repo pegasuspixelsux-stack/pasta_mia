@@ -1,7 +1,8 @@
 import { SiteHeader } from "./components/SiteHeader";
 import { Hero } from "./components/Hero";
 import { Intro } from "./components/Intro";
-import { Experiences } from "./components/Experiences";
+import { Craft } from "./components/Craft";
+import { Cellar } from "./components/Cellar";
 import { Atmosphere } from "./components/Atmosphere";
 import { Reviews } from "./components/Reviews";
 import { Gallery } from "./components/Gallery";
@@ -11,11 +12,12 @@ import { SiteFooter } from "./components/SiteFooter";
 export default function Home() {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader onDark />
       <main>
         <Hero />
         <Intro />
-        <Experiences />
+        <Craft />
+        <Cellar />
         <Atmosphere />
         <Reviews />
         <Gallery />

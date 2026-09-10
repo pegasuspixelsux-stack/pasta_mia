@@ -5,7 +5,13 @@ import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { nav } from "../lib/content";
 
-export function SiteHeader() {
+/**
+ * `onDark` — when the header is transparent (top of page, not scrolled), it
+ * sits over a dark surface (the home hero photo + scrim), so its text goes
+ * light. Pages without a dark hero pass `onDark={false}` (the default) and keep
+ * dark text in the transparent state.
+ */
+export function SiteHeader({ onDark = false }: { onDark?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
@@ -25,6 +31,8 @@ export function SiteHeader() {
   }, [open]);
 
   const solid = scrolled || open;
+  // Light text only while transparent over a dark hero; dark text otherwise.
+  const light = !solid && onDark;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -41,10 +49,10 @@ export function SiteHeader() {
             href="/#top"
             className={[
               "font-display text-[1.35rem] leading-none tracking-[-0.01em] transition-colors duration-500 lg:text-[1.5rem]",
-              solid ? "text-ink" : "text-ink",
+              light ? "text-white" : "text-ink",
             ].join(" ")}
           >
-Pasta Mia<span className="text-gold">.</span>
+            Pasta Mia<span className={light ? "text-gold-soft" : "text-gold"}>.</span>
           </Link>
 
           <nav className="hidden items-center gap-9 md:flex">
@@ -52,7 +60,12 @@ Pasta Mia<span className="text-gold">.</span>
               <Link
                 key={item.href}
                 href={item.href}
-                className="group relative py-1 text-[0.82rem] font-medium tracking-wide text-ink-soft/80 transition-colors duration-300 hover:text-ink"
+                className={[
+                  "group relative py-1 text-[0.82rem] font-medium tracking-wide transition-colors duration-300",
+                  light
+                    ? "text-white/80 hover:text-white"
+                    : "text-ink-soft/80 hover:text-ink",
+                ].join(" ")}
               >
                 {item.label}
                 <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-gold transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100" />
@@ -63,7 +76,12 @@ Pasta Mia<span className="text-gold">.</span>
           <div className="flex items-center gap-3">
             <Link
               href="/#reserve"
-              className="hidden rounded-full border border-ink/20 px-5 py-2.5 text-[0.8rem] font-semibold tracking-wide text-ink transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-ink hover:bg-ink hover:text-canvas sm:inline-block"
+              className={[
+                "hidden rounded-full border px-5 py-2.5 text-[0.8rem] font-semibold tracking-wide transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] sm:inline-block",
+                light
+                  ? "border-white/35 text-white hover:border-white hover:bg-white hover:text-ink"
+                  : "border-ink/20 text-ink hover:border-ink hover:bg-ink hover:text-canvas",
+              ].join(" ")}
             >
               Reservá una mesa
             </Link>
@@ -78,19 +96,22 @@ Pasta Mia<span className="text-gold">.</span>
               <span className="relative block h-3 w-5">
                 <span
                   className={[
-                    "absolute left-0 block h-px w-full bg-ink transition-all duration-300",
+                    "absolute left-0 block h-px w-full transition-all duration-300",
+                    light ? "bg-white" : "bg-ink",
                     open ? "top-1.5 rotate-45" : "top-0",
                   ].join(" ")}
                 />
                 <span
                   className={[
-                    "absolute left-0 top-1.5 block h-px w-full bg-ink transition-all duration-300",
+                    "absolute left-0 top-1.5 block h-px w-full transition-all duration-300",
+                    light ? "bg-white" : "bg-ink",
                     open ? "-rotate-45" : "",
                   ].join(" ")}
                 />
                 <span
                   className={[
-                    "absolute left-0 block h-px w-full bg-ink transition-all duration-300",
+                    "absolute left-0 block h-px w-full transition-all duration-300",
+                    light ? "bg-white" : "bg-ink",
                     open ? "top-1.5 opacity-0" : "top-3",
                   ].join(" ")}
                 />

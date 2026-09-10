@@ -119,22 +119,22 @@
     );
   }
 
-  /* Cream scrims — the photo settles into the page's warm surface tones */
+  /* Hero scrim — a darker-tan overlay so the light headline holds contrast over
+     the photo. Deepest at the top (nav) and lower-left (copy). */
   .scrim-hero {
     background:
       linear-gradient(
         to bottom,
-        color-mix(in oklab, var(--color-canvas) 32%, transparent) 0%,
-        transparent 20%,
-        transparent 30%,
-        color-mix(in oklab, var(--color-canvas) 55%, transparent) 60%,
-        color-mix(in oklab, var(--color-canvas) 88%, transparent) 84%,
-        var(--color-canvas) 100%
+        color-mix(in oklab, #3d2c1b 75%, transparent) 0%,
+        color-mix(in oklab, #3d2c1b 51%, transparent) 24%,
+        color-mix(in oklab, #3d2c1b 49%, transparent) 42%,
+        color-mix(in oklab, #3d2c1b 70%, transparent) 74%,
+        color-mix(in oklab, #3d2c1b 88%, transparent) 100%
       ),
       radial-gradient(
-        140% 80% at 10% 78%,
-        color-mix(in oklab, var(--color-canvas) 82%, transparent),
-        transparent 58%
+        150% 92% at 6% 84%,
+        color-mix(in oklab, #3d2c1b 82%, transparent),
+        transparent 60%
       );
   }
 
@@ -178,5 +178,26 @@
   50% {
     transform: translateY(6px);
     opacity: 0.9;
+  }
+}
+
+/* Hero review ticker — content is duplicated, so -50% loops seamlessly. */
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Typewriter caret */
+@keyframes caret-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
 }

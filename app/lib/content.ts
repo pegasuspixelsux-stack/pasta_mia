@@ -30,7 +30,7 @@ export const nav = [
 
 export const hero = {
   place: "Trattoria de barrio — Pocitos",
-  title: ["Pasta fresca hecha a mano,", "recetas de familia y vino."],
+  title: "Pasta Mia",
   subtitle:
     "Amasamos todos los días, las salsas se cocinan a fuego lento y el pan sale caliente a la mesa. Una carta corta de clásicos italianos, hecha como en casa.",
   cta: "Ver la carta de pastas",
@@ -51,65 +51,83 @@ export const intro = {
   ],
 };
 
-export const experiences = [
-  {
-    id: "the-midday",
-    kicker: "12:00 — 15:30",
-    title: "El Mediodía",
-    body: "Menú corto del día, pasta recién estirada y una copa de vino de la casa. Mesas tranquilas antes de que se llene el salón.",
-    image: img.midday,
-    alt: "Un plato de tagliatelle con salsa de tomate y albahaca sobre una mesa de madera junto a la ventana.",
-    link: "Reservá una mesa para el mediodía",
-    detail: {
-      trigger: "Hoy en la carta",
-      lead: "El menú del mediodía es corto y se arma con lo que se amasó a la mañana. Un día reciente fue así:",
+export const craft = {
+  kicker: "El arte del detalle",
+  title: "Pastas y salsas caseras",
+  lede: "Cada variedad de pasta se elabora a diario con sémola de grano duro y se combina con salsas tradicionales que honran nuestras raíces italianas.",
+  columns: [
+    {
+      title: "Nuestras pastas",
+      note: "Estiradas a mano y cortadas todos los días en nuestra cocina.",
+      image: `${U}1556761223-4c4282c73f77?w=900&ar=16:10${q}`,
+      alt: "Manos amasando pasta fresca sobre la mesa de trabajo enharinada.",
       items: [
-        "Tagliatelle al ragù bolognese — carne cocida a fuego lento con tomate San Marzano",
-        "Ravioli di ricotta e spinaci — manteca de salvia tostada",
-        "Gnocchi alla sorrentina — fior di latte y albahaca, al horno",
-        "Ensalada tricolore — rúcula, tomate, muzzarella y aceite de oliva",
+        "Tagliatelle y fettuccine al huevo",
+        "Sorrentinos de calabaza y muzzarella",
+        "Ravioles de ricota, nuez y espinaca",
+        "Ñoquis caseros de papa rústica",
+        "Pappardelle de sémola de grano duro",
+        "Panzerotti rellenos de osobuco",
       ],
     },
-  },
-  {
-    id: "the-dinner",
-    kicker: "20:00 — 00:00",
-    title: "La Cena",
-    body: "La sala baja la luz y se pone cálida. La carta entera — antipasti, pastas rellenas, ragù de olla y clásicos al horno — velas sobre las mesas y pan recién horneado.",
-    image: img.dinner,
-    alt: "Un plato de pasta cremosa humeante sobre una mesa oscura con luz de vela.",
-    link: "Reservá una mesa para la cena",
-    detail: {
-      trigger: "Bueno saber",
-      lead: "Algunas notas antes de reservar la noche:",
+    {
+      title: "Nuestras salsas",
+      note: "Preparadas a fuego lento con ingredientes frescos de estación.",
+      image: `${U}1481931098730-318b6f776db0?w=900&ar=16:10${q}`,
+      alt: "Pasta salseada a fuego lento en una cazuela humeante.",
       items: [
-        "La pasta del día se anuncia en la mesa — según lo que se amasó",
-        "Última comanda a la cocina 23:30; la cocina cierra a medianoche",
-        "Grupos de más de 8 arman menú cerrado — se coordina por teléfono",
-        "Avisá si sos celíaco o tenés alergias — se trabaja mucha harina en la misma cocina",
+        "Ragù bolognese estofado por seis horas",
+        "Pomodoro fresco con albahaca y oliva",
+        "Pesto genovés de albahaca y piñones",
+        "Crema de hongos porcini y trufa",
+        "Caruso clásica con jamón, champiñones y crema",
+        "Putanesca con anchoas, alcaparras y aceitunas negras",
+        "Cuatro formaggi: provolone, gorgonzola, fontina y parmesano",
       ],
     },
-  },
-  {
-    id: "the-bar",
-    kicker: "19:00 — tarde",
-    title: "La Barra",
-    body: "Antipasti y una copa en la barra de madera — burrata, tabla de fiambres, arancini — una carta de tintos italianos que vale quedarse, y cocina del mismo horno hasta cerrar.",
-    image: img.bar,
-    alt: "Una mano levantando una copa de vino tinto sobre una barra de madera junto a una tabla de fiambres.",
-    link: "Ver la barra",
-    detail: {
-      trigger: "Desde la barra",
-      lead: "La carta se mueve con la temporada. Los fijos que se quedan:",
+  ],
+};
+
+export const cellar = {
+  kicker: "Cava y coctelería",
+  title: "La Barra",
+  lede: "Selección de vinos de bodega por copa y botella para maridar nuestras pastas. Mirá la carta completa para precios y cosechas.",
+  groups: [
+    {
+      tag: "Tintos",
+      title: "Vinos tintos",
+      image: `${U}1510812431401-41d2bd2722f3?w=1100&ar=4:3${q}`,
+      alt: "Dos copas de vino tinto sobre una mesa de madera con luz cálida.",
       items: [
-        "Burrata con tomates asados, albahaca y aceite de oliva",
-        "Arancini de ragù con parmesano",
-        "Tabla de fiambres y quesos italianos",
-        "Negroni de la casa, cáscara de naranja quemada",
+        { name: "Tannat Reserva", note: "Corte robusto de Maldonado", serve: "Copa · Botella" },
+        { name: "Chianti Classico DOCG", note: "Toscana, Italia", serve: "Copa · Botella" },
+        { name: "Malbec Valle de Uco", note: "Mendoza, Argentina", serve: "Copa · Botella" },
       ],
     },
-  },
-] as const;
+    {
+      tag: "Blancos y rosados",
+      title: "Blancos y frescos",
+      image: `${U}1474722883778-792e7990302f?w=1100&ar=4:3${q}`,
+      alt: "Una copa de vino blanco servida junto a un racimo de uvas sobre lino claro.",
+      items: [
+        { name: "Pinot Grigio delle Venezie", note: "Véneto, Italia", serve: "Copa · Botella" },
+        { name: "Albariño costero", note: "Garzón, Uruguay", serve: "Copa · Botella" },
+        { name: "Rosé de Sangiovese", note: "Toscana, Italia", serve: "Copa · Botella" },
+      ],
+    },
+    {
+      tag: "Espumosos y digestivos",
+      title: "Burbujas y amari",
+      image: `${U}1553361371-9b22f78e8b1d?w=1100&ar=4:3${q}`,
+      alt: "Botellas de vino en fila sobre un estante de madera.",
+      items: [
+        { name: "Prosecco DOC Extra Dry", note: "Véneto, Italia", serve: "Copa · Botella" },
+        { name: "Limoncello della casa", note: "Artesanal, bien frío", serve: "Copa" },
+        { name: "Grappa Riserva", note: "Digestivo tradicional", serve: "Copa" },
+      ],
+    },
+  ],
+};
 
 export const atmosphere = {
   title: ["Cocinamos al ritmo", "que marca la masa."],
@@ -225,6 +243,8 @@ export const reservation = {
 export const contact = {
   phoneLabel: "+598 2709 4412",
   phoneHref: "tel:+59827094412",
+  whatsappLabel: "+598 91 234 567",
+  whatsappHref: "https://wa.me/59891234567",
   emailLabel: "hola@pastamia.uy",
   emailHref: "mailto:hola@pastamia.uy",
 };
@@ -245,21 +265,15 @@ export const footerLinks = [
     heading: "Visitá",
     items: [
       { label: "La Carta", href: "/menu" },
-      { label: "La Cocina", href: "/#experiences" },
-      { label: "La Barra", href: "/#bar" },
-      { label: "Eventos privados", href: "/#atmosphere" },
+      { label: "Pastas y salsas", href: "/#despensa" },
       { label: "Galería", href: "/#galeria" },
       { label: "Opiniones", href: "/#opiniones" },
-      { label: "Reservá una mesa", href: "/#reserve" },
     ],
   },
-  {
-    heading: "Cocina",
-    items: [
-      { label: "La Carta completa", href: "/menu" },
-      { label: "Vinos italianos", href: "/#bar" },
-      { label: "Notas dietéticas", href: "/#reserve" },
-      { label: "Tarjetas de regalo", href: "/#reserve" },
-    ],
-  },
+];
+
+export const legalLinks = [
+  { label: "Panel", href: "/admin" },
+  { label: "Política de cookies", href: "/cookies" },
+  { label: "Privacidad", href: "/privacidad" },
 ];

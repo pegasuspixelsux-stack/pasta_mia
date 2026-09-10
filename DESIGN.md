@@ -19,7 +19,7 @@ avoid a rename sweep across every component. Read `gold` as "the accent".
 | Token | Value | Role |
 | --- | --- | --- |
 | `canvas` | `#fdfbf7` | Primary surface — body, nav, base sections, is the ground for white cards |
-| `mist` | `#f7f0e4` | Deeper warm tint (Hero, Experiences, Reviews, Footer) |
+| `mist` | `#f7f0e4` | Deeper warm tint (Hero base, Craft, Reviews, Footer) |
 | `sand` | `#f1e7d6` | Reservation section — the form card floats on it |
 | `shell` | `#e8dac2` | Wheat — image placeholder, disabled control fill |
 | `ink` | `#2c221e` | Espresso — headings, primary text, solid buttons |
@@ -43,8 +43,8 @@ Standard easing: `cubic-bezier(0.16, 1, 0.3, 1)` (exponential out).
 
 - **Display** — Playfair Display (`font-display`), variable, medium (500) for
   headings, 400 italic for accents. Tracking `-0.022em` at hero
-  scale, `-0.02em` elsewhere. Hero clamps to `5.5rem`; section headings to
-  ~`3.1rem`. Used only for large headings and the wordmark.
+  scale, `-0.02em` elsewhere. Hero wordmark clamps to `6.5rem`; section
+  headings to ~`3.1rem`. Used only for large headings and the wordmark.
 - **Body / UI** — Montserrat (`font-sans`). Body `1rem`/relaxed, `muted`.
   Small-caps markers: `0.7–0.76rem`, weight 600, tracking `0.18–0.3em`,
   uppercase — used only for datelines and time ranges that carry real
@@ -53,39 +53,48 @@ Standard easing: `cubic-bezier(0.16, 1, 0.3, 1)` (exponential out).
 
 ## Surfaces & motion
 
-- **Nav** (`SiteHeader`) — fixed; transparent over the hero, transitioning to
-  `bg-canvas/80 backdrop-blur-md` with a `border-line` hairline and a faint
-  shadow past 24px scroll. Espresso text, terracotta brand dot, outline
-  Reserve pill. Wordmark "Pasta Mia".
-- **Photography** — full-bleed, under cream gradients (`.scrim-hero`,
-  `.scrim-soft`) that settle the photo into the warm surface tones. Experience
-  images: rounded `14px`, `ring-1 ring-ink/[0.06]`, `bg-shell` placeholder,
-  hover `scale-[1.04]`.
+- **Nav** (`SiteHeader`) — fixed; transparent over the hero (light text, via
+  the `onDark` prop), transitioning to `bg-canvas/80 backdrop-blur-md` with a
+  `border-line` hairline and a faint shadow past 24px scroll (espresso text).
+  Terracotta brand dot, outline Reserve pill. Wordmark "Pasta Mia". Pages
+  without a dark hero (`/menu`) omit `onDark` and stay dark-on-transparent.
+- **Photography** — full-bleed. The hero photo sits under `.scrim-hero`, a
+  darker-tan (`#3d2c1b`) overlay so the light headline holds contrast; the
+  wordmark/nav go light while the header is transparent (`SiteHeader onDark`).
+  Experience images sit under the cream `.scrim-soft`, rounded `14px`,
+  `ring-1 ring-ink/[0.06]`, `bg-shell` placeholder, hover `scale-[1.04]`.
 - **Hero entrance** — CSS keyframes only (`hero-settle`, `line-rise`): image
-  settles from `scale(1.08)`, headline lines rise in stagger. Visible without
-  JS; disabled under `prefers-reduced-motion`.
-- **Hero review block** (`HeroReviews`) — transparent, sits over the photo in
-  the hero's right column on `lg`, stacked under the CTA on smaller screens.
-  Rotates through the first three `reviews` every 5s (paused under
-  `prefers-reduced-motion`); pill dots jump to a review. Sample text, styled as
-  a "Reseña Google" block — not real Google data.
+  settles from `scale(1.08)`, copy rises in stagger. Visible without JS;
+  disabled under `prefers-reduced-motion`.
+- **Hero headline** (`Typewriter`) — the "Pasta Mia" wordmark types out, holds,
+  deletes and loops with a blinking caret. Full text is reserved (invisible
+  copy) so the centred heading never jitters; renders whole on the server and
+  first paint (no flash), loop starts after mount, still under reduced motion.
+- **Hero review ticker** — the first `reviews` scroll left as transparent,
+  border-less boxes along the bottom of the hero (`@keyframes ticker`, content
+  duplicated so `-50%` loops seamlessly; paused under reduced motion). Styled as
+  "Reseña Google" text — not real Google data.
 - **Scroll reveal** (`Reveal`) — IntersectionObserver, content visible by
   default, only below-the-fold elements ease up 16px once.
-- **Accordions** (`Experiences`) — one open at a time, `max-h` transition
-  (`max-h-0` → `max-h-96`, 500ms), chevron rotates 180°.
+- **Card hover** — `Craft`, `Cellar` and `Reviews` cards lift / shift their
+  border on hover; card and `Cellar` images slow-zoom (`scale-[1.04–1.05]`,
+  900ms) on the `group`.
 - Browser surfaces (selection, scrollbar, focus ring) themed from the palette
   in `app/globals.css`.
 
 ## Layout
 
-`app/page.tsx` composes: `SiteHeader` · `Hero` (full viewport, two-column on
-`lg` — copy left, `HeroReviews` block right) · `Intro`
-(two-column band — kicker + statement left, two teasers right; `#nosotros`) ·
-`Experiences` (el mediodía / la cena / la barra as
-alternating image/text rows + accordions) · `Atmosphere` (split image/text) ·
-`Reviews` (3-col quote cards on mist) · `Reservation` (static form, card on
-sand) · `SiteFooter` (multi-column + one location). Max content width `84rem`;
-nav links smooth-scroll to section ids.
+`app/page.tsx` composes: `SiteHeader` (`onDark`) · `Hero` (full viewport —
+centred `Typewriter` heading + subtitle over a darker-tan scrim, review ticker
+along the bottom) · `Intro` (two-column band — kicker + statement left, two
+teasers right; `#nosotros`) · `Craft` (`#despensa` — centred heading + two
+"Nuestras pastas / salsas" cards with image and bullet list, on `mist`) ·
+`Cellar` (`#barra` — dark section, "La Barra" wine groups as alternating
+text/image rows) · `Atmosphere` (split image/text) · `Reviews` (3-col quote
+cards on mist) · `Reservation` (static form, card on sand) · `SiteFooter`
+(brand + Visitá / Dónde estamos / Reservas columns, legal links). Max content
+width `84rem`; nav links smooth-scroll to section ids. `/menu` keeps the
+filterable `MenuBrowser`.
 
 ## Notes
 

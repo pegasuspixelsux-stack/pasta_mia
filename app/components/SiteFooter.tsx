@@ -1,13 +1,15 @@
 import Link from "next/link";
-import { contact, footerLinks, locations } from "../lib/content";
+import { contact, footerLinks, legalLinks, locations } from "../lib/content";
+import { WhatsApp } from "./icons";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
+  const loc = locations[0];
 
   return (
     <footer className="border-t border-line bg-mist">
       <div className="mx-auto max-w-[84rem] px-5 py-16 sm:px-8 sm:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1.1fr_1.2fr]">
           <div className="max-w-[34ch]">
             <p className="font-display text-2xl tracking-[-0.01em] text-ink">
               Pasta Mia<span className="text-gold">.</span>
@@ -40,6 +42,18 @@ export function SiteFooter() {
 
           <div>
             <h3 className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
+              Dónde estamos
+            </h3>
+            <address className="mt-5 text-[0.9rem] not-italic leading-relaxed text-muted">
+              {loc.address}
+            </address>
+            <p className="mt-2 text-[0.82rem] leading-relaxed text-faint">
+              {loc.hours}
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
               Reservas
             </h3>
             <p className="mt-5 text-[0.92rem] leading-relaxed text-muted">
@@ -53,6 +67,16 @@ export function SiteFooter() {
                 {contact.phoneLabel}
               </a>
               <a
+                href={contact.whatsappHref}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`WhatsApp ${contact.whatsappLabel}`}
+                className="flex items-center gap-2 text-muted transition-colors duration-300 hover:text-ocean"
+              >
+                <WhatsApp className="h-4 w-4 shrink-0" />
+                {contact.whatsappLabel}
+              </a>
+              <a
                 href={contact.emailHref}
                 className="block text-muted transition-colors duration-300 hover:text-ocean"
               >
@@ -62,53 +86,29 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-14 border-t border-line pt-8">
-          <h3 className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
-            Dónde estamos
-          </h3>
-          <div className="mt-5 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-            {locations.map((loc) => (
-              <div key={loc.id}>
-                <p className="font-display text-lg tracking-[-0.01em] text-ink">
-                  {loc.name}
-                </p>
-                <address className="mt-2 text-[0.88rem] not-italic leading-relaxed text-muted">
-                  {loc.address}
-                </address>
-                <a
-                  href={loc.phoneHref}
-                  className="mt-1.5 block text-[0.88rem] font-medium text-ink transition-colors duration-300 hover:text-ocean"
-                >
-                  {loc.phoneLabel}
-                </a>
-                <p className="mt-1.5 text-[0.82rem] tabular-nums text-faint">
-                  {loc.hours}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-14 flex flex-col gap-2 border-t border-line pt-8 text-[0.8rem] text-faint sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} Pasta Mia. Una maqueta de diseño — no es un negocio real.</p>
-          <p className="flex items-center gap-3">
-            <Link
-              href="/admin"
-              className="text-muted transition-colors hover:text-ink"
+        <div className="mt-14 flex flex-col gap-3 border-t border-line pt-8 text-[0.8rem] text-faint sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {year} Pasta Mia. Una maqueta de diseño — no es un negocio real.
+            Fotografía vía{" "}
+            <a
+              href="https://unsplash.com/license"
+              className="underline decoration-line underline-offset-4 transition-colors hover:text-ink"
             >
-              Panel
-            </Link>
-            <span aria-hidden>·</span>
-            <span>
-              Montevideo, Uruguay · Fotografía vía{" "}
-              <a
-                href="https://unsplash.com/license"
-                className="text-muted underline decoration-line underline-offset-4 transition-colors hover:text-ink"
-              >
-                Unsplash
-              </a>
-            </span>
+              Unsplash
+            </a>
+            .
           </p>
+          <nav className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            {legalLinks.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-muted transition-colors duration-300 hover:text-ink"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </div>
     </footer>

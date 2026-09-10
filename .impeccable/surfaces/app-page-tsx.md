@@ -23,7 +23,7 @@ OWN-WORLD: Warm light — cream surfaces (#fdfbf7 / #f7f0e4), espresso ink (#2c2
 
 STORY: The visitor sees a singular handmade-pasta trattoria, feels the family-kitchen warmth through imagery and quiet motion, expands the services that interest them, and books a table via a styled static mockup.
 
-FIRST VIEWPORT: Full-screen photograph of fresh pasta, warm cream gradient settling over the lower third. Fixed cream-glass nav: "Pasta Mia" wordmark + terracotta accent dot left; links La Carta / La Casa / Reservas; right an outline "Reservá una mesa" pill. Hero copy anchored lower-left: terracotta tracked dateline "Trattoria de barrio — Pocitos", Playfair Display headline in espresso over two lines "Pasta fresca hecha a mano, / recetas de familia y vino.", one brown-grey subtitle line, a ghost "Ver la carta de pastas" link with a basil-sprig glyph. Faint scroll cue bottom-center.
+FIRST VIEWPORT: Full-screen photograph of fresh pasta, warm cream gradient settling over the lower third. Fixed cream-glass nav: "Pasta Mia" wordmark + terracotta accent dot left; links La Carta / La Casa / Reservas; right an outline "Reservá una mesa" pill. Hero copy anchored lower-left: terracotta tracked dateline "Trattoria de barrio — Pocitos", Playfair Display headline (light, over a darker-tan scrim) over two lines "Pasta fresca hecha a mano, / recetas de familia y vino.", one brown-grey subtitle line, a ghost "Ver la carta de pastas" link with a basil-sprig glyph. Faint scroll cue bottom-center.
 
 FORM: Brief-pinned editorial restaurant homepage (Il Tridente Positano structure); #1 on the ordered list because the brief pins it. No concept-seed roll — the brief paints its own picture and names a site to mirror; the palette is warm light per explicit user instruction.
 
